@@ -1,11 +1,14 @@
 require('dotenv').config()
+const atob = require('atob');
 const express = require('express')
 const bodyParser = require('body-parser')
 const Octokit = require("@octokit/rest")
 const { App } = require('@octokit/app')
 
 // Set export GITHUB_PRIVATE_KEY=... outside
-const githubApp = new App({ id: process.env.GITHUB_APP_IDENTIFIER, privateKey: process.env.GITHUB_PRIVATE_KEY });
+console.log(process.env.GITHUB_APP_IDENTIFIER)
+console.log(process.env.GITHUB_PRIVATE_KEY)
+const githubApp = new App({ id: process.env.GITHUB_APP_IDENTIFIER, privateKey: atob(process.env.GITHUB_PRIVATE_KEY) });
 
 const app = express()
 const port = 3000

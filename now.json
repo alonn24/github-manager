@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "env": {
+    "GITHUB_PRIVATE_KEY": "@github_private_key",
+    "GITHUB_APP_IDENTIFIER": "@github_app_identifier"
+  },
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/event_handler",
+      "dest": "/index.js",
+      "methods": [
+        "POST"
+      ]
+    }
+  ]
+}
