@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "serve": "node index.js",
+    "build": "echo \"Done!\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
